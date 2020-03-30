@@ -1,0 +1,68 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=360">
+  <title>Content</title>
+  <link type="text/css" rel="stylesheet" href="/static/css/lp.css">
+  <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+  <style type="text/css">
+    .link {
+      position: absolute;
+      padding: 0 12px 13px 12px;
+      right: 2px;
+      top: 2px;
+      color: #5d301d;
+      display: block;
+      line-height: 64px;
+      font-size: 6rem;
+      text-align: center;
+      cursor: pointer;
+      background-color: #fff;
+      opacity: .8;
+      border: 2px solid #5d301d;
+    }
+
+    .link:hover,
+    .link:focus,
+    .link:active {
+      background-color: #5d301d;
+      border: 2px solid #5d301d;
+      color: #fff;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header bg">
+      <p style="display:none" id="ptxid">{{.ptxid}}</p>
+      <img src="/static/img/lp.png" />
+    </div>
+    <div id="form">
+      <div id="Hong Kong Blue Bubble Technology Co, Limited _box" class="active">
+        <div class="footer myheader">
+          <p>Kosten: EUR 5.00 / Woche</p>
+        </div>
+        <!-- <input type="text" name="Hong Kong Blue Bubble Technology Co, Limited " id="Hong Kong Blue Bubble Technology Co, Limited " class="textfield radius totheend" autofocus="autofocus" maxlength="11" placeholder="มือถือ"> -->
+        <a style="cursor:pointer" onClick="clicke()" id="submit_btn_Hong Kong Blue Bubble Technology Co, Limited " class="button">
+          <span class="lng_en">Kaufen</span>
+        </a>
+        <div class="footer mybottom">
+          <p class="myp">
+            <p>Leverancier: Hongkong Blue Bubble Technology Co,Limited<br>Nach dem Abschluss des Abonnements bei
+              GBBGame können Sie alle bereitgestellten Spiele aus verschiedenen Kategorien für die Dauer des
+              Abonnements spielen: Strategie, Action, Sport, und vieles Mehr. Preis: 5.00€ / Woche.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  function clicke() {
+    window.location.href = "http://159.89.195.56:8088/clat/" + $("#ptxid").text()
+  }
+</script>
+
+</html>
