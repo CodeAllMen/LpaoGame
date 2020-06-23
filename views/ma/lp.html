@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=360"/>
+    <title>FN GAMES</title>
+    <link rel="icon" href=" " type="image/x-icon"/>
+    <link type="text/css" rel="stylesheet" href="/static/css/game.css">
+    <style>
+        .myh {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 25px;
+            background-color: #8da728;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .btp {
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.2 !important;
+            box-sizing: inherit;
+            font-size: 12px !important;
+            text-align: justify;
+            margin-top: 10px;
+        }
+
+        .input_msisdn {
+            width: 200px;
+            height: 40px;
+            outline: none;
+            font-size: 16px;
+            padding-left: 8px;
+            border: 1px solid #dbdbd9;
+        }
+
+        div.footer p {
+            margin: 5px auto;
+        }
+
+        div.footer {
+            margin: 0 auto;
+        }
+
+        .footer .sub {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body class="container">
+<h2 class="myh">FN GAMES</h2>
+<div class="header">
+    <img src="/static/img/lp.png"/>
+</div>
+<div class="footer">
+    <div class="sub">
+        <p style="font-size:12px">
+            Subscribe for RM5.0(Excl SST)/SMS, 10SMS/Month. To cancel, send STOP ML to 36226
+        </p>
+        <button class="buttonOne" id="submit_btn_mobile" onclick="window.location='http://ml.foxseekmedia.com/sub/req?tid={{.TrackId}}'">Subscribe</button>
+        {{/*        <br>*/}}
+
+        <p class="btp">
+            This is an ongoing subscription service until you quit. All subscription contents are compatible with (type
+            of phones). Digi users will receive RM5.0(Excl SST)/SMS, 10SMS/Month. Data charges are billed separately by mobile operators
+            .Please seek parents or guardian approval if you are 18years old and below. Upon clicking subscribe you
+            herby acknowledge that you have fully read and understood the “General terms and conditions. To cancel this
+            service send STOP ML to 36226. Helpline 03-2164-3273, support@macrokiosk.com, 9am-5am, Mon-Fri. This
+            service is operating according to the Malaysia Code of Conduct for SMS Services. Technology powered by
+            Macrokiosk Bhd.
+        </p>
+    </div>
+</div>
+</body>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    // $("#submit_btn_mobile").click(function () {
+        // let msisdn = $(".input_msisdn").val();
+        {{/*window.location.href = 'http://ml.foxseekmedia.com/sub/req?tid={{.TrackId}}';*/}}
+    // })
+</script>
+
+</html>
+<!-- designed by yy(github.com/guaidashu) -->
