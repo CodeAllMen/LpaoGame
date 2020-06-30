@@ -6,12 +6,16 @@ import (
 )
 
 // GetGameList 获取游戏列表
-func GetGameList() []Game {
+func GetGameList(page, size int) ([]Game, int64) {
 	o := orm.NewOrm()
 	var gameList []Game
-	SQL := "select * from game order by random() "
-	o.Raw(SQL).QueryRows(&gameList)
-	return gameList
+	// SQL := "select * from game order by random() "
+	db := o.QueryTable("game")
+	num, _ := db.Count()
+
+	db.Offset(GetCurrentDataPos(page, size)).Limit(size).OrderBy("id").All(&gameList)
+	// o.Raw(SQL).QueryRows(&gameList)
+	return gameList, num
 }
 
 // GetGameByGameID

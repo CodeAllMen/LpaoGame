@@ -232,7 +232,7 @@
                             <a href="/game/{{$oneGame.ID}}" class="btn btn-primary" style="background: #EC9123;
     border: 1px solid #EC9123;
     font-weight: 700;
-    padding: 8px 20px;">Riproduci ora</a>
+    padding: 8px 20px;">Jetzt spielen</a>
                         </div>
                     </div>
                 </div>
@@ -240,7 +240,25 @@
         {{end}}
 
     </div>
+    <ul style="margin-right: 30px; float: right" class="pagination" id="pagination">
+    </ul>
 </div>
+
+<script type="text/javascript" src="/static/lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/lib/bootstrap.js"></script>
+<script type="text/javascript" src="/static/build/bootstrap-paginator.min.js"></script>
+
+<script>
+    $("#pagination").bootstrapPaginator({
+        currentPage: '{{.Page.PageNo}}',
+        totalPages: '{{.Page.TotalPage}}',
+        bootstrapMajorVersion: 3,
+        size: "small",
+        onPageClicked: function (e, originalEvent, type, page) {
+            window.location.href = "/?page=" + page
+        }
+    });
+</script>
 
 <script src="/static/js/index.js"></script>
 <script src="/static/js/index1.js"></script>
@@ -267,12 +285,20 @@
 {{/*</div>*/}}
 <div class="unsub_sub">
     <br>
-    <a href="/tnc" style="color: #0611dc">Podmínky</a> -
-    <a href="/help" style="color: #0611dc">Kontakt a zrušit odběr</a> -
-    <a href="/privacy" style="color: #0611dc">Prohlášení o ochraně soukromí</a>
-    <br>
-    Pro zruseni posli SMS ve tvaru STOP CZ199 na cislo 90440. email: info-cz@mobileinfo.biz CuCa helpline: 844 444 484,
-    Vice info posli sms HELP na 90440.
+    <div class="service_footer_links">
+        <a href="/at/AGB">Nutzungsbedingungen</a> |
+        <a href="/at/Impressum">Impressum</a> |<br>
+        <a href="/at/Rucktrittsrechts">Hinweis auf Rücktrittsrecht</a><br>
+        <a href="/at/Datenschutz">Datenschutz</a> |
+        <a href="/at/KONTAKT">Kontakt/Hilfe</a> |
+        <a href="http://www.mobileinfo.biz/customercare/">Kündigung</a>
+    </div>
+{{/*    <a href="/tnc" style="color: #0611dc">Podmínky</a> -*/}}
+{{/*    <a href="/help" style="color: #0611dc">Kontakt a zrušit odběr</a> -*/}}
+{{/*    <a href="/privacy" style="color: #0611dc">Prohlášení o ochraně soukromí</a>*/}}
+{{/*    <br>*/}}
+{{/*    Pro zruseni posli SMS ve tvaru STOP CZ199 na cislo 90440. email: info-cz@mobileinfo.biz CuCa helpline: 844 444 484,*/}}
+{{/*    Vice info posli sms HELP na 90440.*/}}
 </div>
 
 

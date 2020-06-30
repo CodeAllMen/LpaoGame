@@ -5,6 +5,7 @@ import (
 	"github.com/MobileCPX/LpaoGame/models"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
+	"strconv"
 )
 
 type MainController struct {
@@ -35,9 +36,26 @@ func (c *MainController) Get() {
 		c.Data["subID"] = c.Ctx.GetCookie("user")
 	}
 
-	gameList := models.GetGameList()
+	pageStr := c.GetString("page")
+	page, _ := strconv.Atoi(pageStr)
+
+	if page == 0 {
+		page = 1
+	}
+
+	size := 20
+
+	gameList, num := models.GetGameList(page, size)
+
+	Page := models.PageUtil(int(num), page, size, gameList)
 
 	c.Data["GameList"] = gameList
+	fmt.Println(num)
+
+	c.Data["Page"] = Page
+
+	// fmt.Println(Page)
+
 	c.TplName = "index.html"
 }
 
@@ -90,7 +108,14 @@ func (c *MainController) PlayGame() {
 		}
 
 		if err != nil {
-			gameList := models.GetGameList()
+
+			pageStr := c.GetString("page")
+			page, _ := strconv.Atoi(pageStr)
+
+			size := 20
+
+			gameList, _ := models.GetGameList(page, size)
+
 			c.Data["GameList"] = gameList
 			c.TplName = "index.html"
 		} else {
@@ -104,7 +129,12 @@ func (c *MainController) PlayGame() {
 
 func (c *MainController) Logout() {
 	c.Ctx.SetCookie("user", "")
-	gameList := models.GetGameList()
+	pageStr := c.GetString("page")
+	page, _ := strconv.Atoi(pageStr)
+
+	size := 20
+
+	gameList, _ := models.GetGameList(page, size)
 
 	c.Data["GameList"] = gameList
 	c.TplName = "index.html"

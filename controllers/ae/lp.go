@@ -83,7 +83,7 @@ func (s *SubPage) Register() {
 		UserName: msisdn,
 		Password: msisdn,
 		Sp:       "Dimoco",
-		Country:  "CZ",
+		Country:  "AT",
 	}
 	models.RegistereUser(user)
 

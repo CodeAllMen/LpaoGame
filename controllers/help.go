@@ -9,6 +9,7 @@ import (
 	"github.com/MobileCPX/LpaoGame/models"
 	"github.com/astaxie/beego"
 	"math/rand"
+	"strconv"
 	"time"
 )
 
@@ -23,7 +24,12 @@ func (h *HelpController) DivideCategory() {
 	)
 
 	// 首先获取到游戏列表
-	gameList := models.GetGameList()
+	pageStr := h.GetString("page")
+	page, _ := strconv.Atoi(pageStr)
+
+	size := 20
+
+	gameList, _ := models.GetGameList(page, size)
 
 	for _, game := range gameList {
 

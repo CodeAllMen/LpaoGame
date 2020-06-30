@@ -31,6 +31,7 @@ func init() {
 	beego.Router("/privacy", &ae.SubPage{}, "*:Privacy")
 	beego.Router("/welcome", &ae.SubPage{}, "*:Welcome")
 	beego.Router("/cz/register_msisdn", &ae.SubPage{}, "*:Register")
+	beego.Router("/at/register_msisdn", &ae.SubPage{}, "*:Register")
 	beego.Router("/cz/confirm_sms_ajax", &ae.SubPage{}, "*:ConfirmSMSAjax")
 	beego.Router("/cz/confirm_sms", &ae.SubPage{}, "*:ConfirmSMS")
 
