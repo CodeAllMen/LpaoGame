@@ -49,7 +49,8 @@ func (s *SubPage) Lp() {
 		s.StopRun()
 	}
 
-	s.Data["URL"] = "http://pd.argameloft.com/start-sub?track=" + trackID
+	// s.Data["URL"] = "http://pd.argameloft.com/start-sub?track=" + trackID
+	s.Data["URL"] = "http://pd.argameloft.com/identify?track=" + trackID
 
 	subID := s.Ctx.GetCookie("user")
 	if subID != "" {
